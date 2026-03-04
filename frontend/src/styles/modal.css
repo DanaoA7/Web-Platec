@@ -1,0 +1,227 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between; /* Title left, X right */
+  align-items: center;            /* Vertical center alignment */
+  margin-bottom: 28px;
+}
+
+.modal-header h2 {
+  margin: 0;  /* alisin default margin para pantay */
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--neutral-text);
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: red;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 28px;
+  max-width: 50px;
+  width: 90px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  font-size: 16px;
+  color: var(--neutral-text);
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-content .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.modal-content label {
+  font-weight: 500;
+  color: var(--neutral-text);
+  font-size: 14px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px 12px;
+  border: 1px solid var(--neutral-border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(27, 125, 74, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-actions .btn-secondary {
+  background-color: transparent;
+  color: var(--neutral-text);
+  border: 1px solid var(--neutral-border);
+}
+.btn-cancel{
+  background: linear-gradient(
+    135deg,
+    oklch(26.6% 0.065 152.934) 20%,
+    oklch(63.187% 0.18673 147.227 / 0.808) 100%
+  );
+  color: white;
+  border: none;
+  padding: 12px 18px;       /* better spacing */
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-cancel:hover {
+   background: linear-gradient(
+    135deg,
+    oklch(12.752% 0.01959 161.582) 20%,
+    oklch(63.187% 0.18673 147.227) 100%
+  );
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    oklch(26.6% 0.065 152.934) 5%,
+    oklch(63.187% 0.18673 147.227 / 0.808) 100%
+  );
+  color: white;
+  border: none;
+  padding: 12px 18px;       /* better spacing */
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    oklch(12.752% 0.01959 161.582) 5%,
+    oklch(63.187% 0.18673 147.227) 100%
+  );
+}
+
+.modal-actions .btn-secondary:hover {
+  background-color: var(--neutral-bg);
+}
+
+.modal-actions .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.modal-actions .btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.modal-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .modal-content h2 {
+    font-size: 10px;
+  }
+}
+
+
+.modal-overlay {
+  position: fixed;              /* Para naka-float sa buong screen */
+  inset: 0;                     /* top:0 left:0 right:0 bottom:0 */
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;      /* Horizontal center */
+  align-items: center;          /* Vertical center */
+  z-index: 9999;                /* Para nasa ibabaw lahat */
+}
+
+.modal-content {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+/* Optional smooth animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

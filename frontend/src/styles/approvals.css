@@ -1,0 +1,535 @@
+/* Student Approvals Page Styles */
+
+.approvals-page {
+  padding: 30px;
+  background-color: var(--neutral-bg);
+}
+
+/* Header Section */
+.approvals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--neutral-text);
+  margin: 0 0 8px 0;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: var(--neutral-text);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.header-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.header-stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--neutral-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.alert-error {
+  background-color: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #c62828;
+}
+
+/* Tabs Section */
+.approvals-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--neutral-border);
+  background: white;
+  padding: 0;
+  border-radius: 8px 8px 0 0;
+  overflow: auto;
+}
+
+.tab-button {
+  flex: 0 0 auto;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--neutral-text);
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.tab-icon {
+  font-size: 16px;
+}
+
+.tab-button:hover {
+  opacity: 1;
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  opacity: 1;
+}
+
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  padding: 2px 8px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tab-button.active .tab-badge {
+  background-color: var(--primary-color);
+}
+
+/* Content Area */
+.approvals-content {
+  background: white;
+  border-radius: 0 0 8px 8px;
+  padding: 30px;
+  min-height: 400px;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 400px;
+  color: var(--neutral-text);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--neutral-light);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 400px;
+  text-align: center;
+  color: var(--neutral-text);
+}
+
+.empty-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.empty-state p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Cards Grid (Pending Students) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: white;
+  border: 1px solid var(--neutral-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--neutral-border);
+  background: linear-gradient(135deg, rgba(27, 125, 84, 0.05) 0%, rgba(27, 125, 84, 0.02) 100%);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.card-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--neutral-text);
+  margin: 0;
+}
+
+.badge-pending {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #fff3e0;
+  color: #e65100;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.student-id {
+  font-size: 12px;
+  color: var(--neutral-text);
+  opacity: 0.6;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.card-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--neutral-border);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--neutral-text);
+  opacity: 0.7;
+  min-width: 80px;
+}
+
+.info-value {
+  color: var(--neutral-text);
+  font-weight: 500;
+  text-align: right;
+  flex: 1;
+}
+
+.card-actions {
+  padding: 16px 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-approve {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-approve:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(27, 125, 84, 0.3);
+}
+
+.btn-reject {
+  background-color: #f5f5f5;
+  color: #d32f2f;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-reject:hover {
+  background-color: #ffebee;
+  border-color: #ef5350;
+}
+
+.btn-secondary {
+  background-color: #f5f5f5;
+  color: var(--neutral-text);
+  border: 1px solid var(--neutral-border);
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-confirm {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-confirm:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Rejection Form */
+.rejection-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rejection-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--neutral-border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 80px;
+  color: var(--neutral-text);
+  background-color: var(--neutral-light);
+}
+
+.rejection-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(27, 125, 84, 0.1);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Table Styles (Approved Students) */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.approvals-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.approvals-table thead {
+  background-color: var(--primary-color);
+}
+
+.approvals-table th {
+  padding: 16px 18px;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.approvals-table tbody tr {
+  border-bottom: 1px solid var(--neutral-border);
+  transition: background-color 0.15s ease;
+}
+
+.approvals-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.approvals-table td {
+  padding: 14px 18px;
+  color: var(--neutral-text);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  .header-stats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .approvals-page {
+    padding: 20px;
+  }
+
+  .approvals-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    padding: 12px 16px;
+  }
+
+  .approvals-tabs {
+    gap: 0;
+    border-radius: 8px;
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 14px 12px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .tab-icon {
+    display: none;
+  }
+
+  .approvals-table {
+    font-size: 12px;
+  }
+
+  .approvals-table th,
+  .approvals-table td {
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .approvals-page {
+    padding: 16px;
+  }
+
+  .approvals-header {
+    gap: 12px;
+  }
+
+  .header-content h1 {
+    font-size: 22px;
+  }
+
+  .header-stats {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .header-stats .stat {
+    flex: 1;
+    padding: 10px 12px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .approvals-content {
+    padding: 20px;
+  }
+
+  .card-actions {
+    gap: 10px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+
+  .rejection-textarea {
+    min-height: 70px;
+  }
+}

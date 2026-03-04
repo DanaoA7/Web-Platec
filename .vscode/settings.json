@@ -1,0 +1,22 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "statement_timeout": 0,
+                "query_timeout": 0,
+                "connectionTimeoutMillis": 5000,
+                "idleTimeoutMillis": 10000,
+                "max": 10
+            },
+            "ssh": "Disabled",
+            "previewLimit": 500,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "NURTURE ACADEMY",
+            "database": "nurture_academy",
+            "username": "postgres"
+        }
+    ]
+}

@@ -1,0 +1,282 @@
+/* Attendance Page Styles */
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.attendance-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--neutral-text);
+  margin: 0;
+}
+
+.header-date-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--neutral-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: white;
+}
+
+.header-date-picker label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--neutral-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.date-input-header {
+  border: none;
+  background: transparent;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: var(--neutral-text);
+  cursor: pointer;
+  outline: none;
+}
+
+.date-input-header::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.date-input-header::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Statistics Bar */
+.attendance-stats-bar {
+  display: grid;
+  height: 120px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 35px;
+  
+  background-color:oklch(87.003% 0.15079 153.986 / 0.271);
+  border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.473);  
+}
+
+.stat-item {
+  text-align: left;
+  padding: 0;
+}
+
+.stat-item .stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--neutral-text);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.stat-item .stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--neutral-text);
+}
+
+.stat-item.present .stat-value {
+  color: #2196f3;
+}
+
+.stat-item.absent .stat-value {
+  color: #f44336;
+}
+
+.stat-item.late .stat-value {
+  color: #ff9800;
+}
+
+.stat-item.marked .stat-value {
+  color: var(--neutral-text);
+}
+
+.stat-item.progress .stat-value {
+  color: var(--neutral-text);
+}
+
+/* Filters Section */
+.attendance-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.63);
+  align-items: flex-end;
+}
+
+/* Optional: Style for filter group */
+.attendance-filters .filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.attendance-filters label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.attendance-filters select {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.filter-select {
+  padding: 10px 12px;
+  border: 1px solid var(--neutral-border);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  color: var(--neutral-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 150px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(27, 125, 84, 0.1);
+}
+
+.filter-select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .attendance-stats-bar {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .stat-item .stat-value {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .attendance-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .header-date-picker {
+    align-self: flex-end;
+  }
+
+  .attendance-stats-bar {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-header {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .attendance-header h1 {
+    font-size: 24px;
+  }
+
+  .header-date-picker {
+    align-self: stretch;
+  }
+
+  .attendance-stats-bar {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .stat-item .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-item .stat-label {
+    font-size: 11px;
+  }
+
+  .attendance-filters {
+    flex-direction: column;
+  }
+
+  .filter-select {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .attendance-header h1 {
+    font-size: 20px;
+  }
+
+  .header-date-picker {
+    width: 100%;
+    padding: 8px 10px;
+  }
+
+  .date-input-header {
+    flex: 1;
+  }
+
+  .attendance-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .stat-item .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-item .stat-label {
+    font-size: 10px;
+  }
+
+  .stat-item:last-child {
+    grid-column: span 2;
+  }
+
+  .filter-select {
+    width: 100%;
+    min-width: unset;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .attendance-header-daily{
+    color: #2196f3;
+  }
+}
+
+
