@@ -1,0 +1,15 @@
+{
+  "name": "Nurture Academy",
+  "displayName": "Nurture Academy",
+  "version": "1.0.0",
+  "description": "Student Attendance Management Mobile App",
+  "main": "node_modules/expo/AppEntry.js",
+  "ios": {
+    "supportsTabletMode": true,
+    "bundleIdentifier": "com.platec.nurtureacademy"
+  },
+  "android": {
+    "package": "com.platec.nurtureacademy",
+    "versionCode": 1
+  }
+}
